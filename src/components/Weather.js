@@ -1,6 +1,7 @@
 import React from 'react'
 
-function Weather({ city, temp, country, humidity, desc, error }) {
+function Weather(props) {
+    const { city, temp, country, humidity, desc, error } = props
     return (
         <div className="weather__info">
             {city && country &&
