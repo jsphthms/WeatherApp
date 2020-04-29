@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, {
+  useState
+} from 'react';
 import './App.css';
 import Title from './components/Title'
 import Form from './components/Form'
 import Weather from './components/Weather'
 
 function App() {
-  const API_KEY = 'facc80a6e2c96294edf732b5d5e240ad'
+  const API_KEY = `${process.env.REACT_APP_KEY}`
 
   const [weather, setWeather] = useState([])
 
@@ -40,31 +42,53 @@ function App() {
 
   };
 
-  return (
-    <div className="App">
-      <div className="wrapper">
-        <div className="main">
-          {/* <div className="container"> */}
-          <div className="row">
-            <div className="col-md-5 title-container">
-              <Title />
-            </div>
-            <div className="col-md-7 form-container">
-              <Form getWeather={getWeather} />
-              <Weather
-                city={weather.city}
-                temp={weather.temp}
-                country={weather.country}
-                humidity={weather.humidity}
-                desc={weather.description}
-                error={weather.error}
-              />
-            </div>
-          </div>
-        </div>
-        {/* </div> */}
-      </div>
-    </div>
+  return ( <
+    div className = "App" >
+    <
+    div className = "wrapper" >
+    <
+    div className = "main" > {
+      /* <div className="container"> */
+    } <
+    div className = "row" >
+    <
+    div className = "col-md-5 title-container" >
+    <
+    Title / >
+    <
+    /div> <
+    div className = "col-md-7 form-container" >
+    <
+    Form getWeather = {
+      getWeather
+    }
+    /> <
+    Weather city = {
+      weather.city
+    }
+    temp = {
+      weather.temp
+    }
+    country = {
+      weather.country
+    }
+    humidity = {
+      weather.humidity
+    }
+    desc = {
+      weather.description
+    }
+    error = {
+      weather.error
+    }
+    /> < /
+    div > <
+    /div> < /
+    div > {
+      /* </div> */
+    } <
+    /div> < /
+    div >
   );
 }
 
